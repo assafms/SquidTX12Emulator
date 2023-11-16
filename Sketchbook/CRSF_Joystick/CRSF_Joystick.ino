@@ -43,7 +43,7 @@ void packetChannels()
 {
     // Manually expanding instead of looping so I can change params as needed
     
-    // X - Channel 1 - A
+    // X - Channel 1 - Ail
     channel_data = crsf.getChannel(1);
     map_data = map(channel_data, \
       CHANNEL_1_LOW_EP,          \
@@ -52,7 +52,7 @@ void packetChannels()
       JOYSTICK_HIGH);
     gamepad.SetX(map_data);
     
-    // Y - Channel 2 - E
+    // Y - Channel 2 - Ele
     channel_data = crsf.getChannel(2);
     map_data = map(channel_data, \
       CHANNEL_2_LOW_EP,          \
@@ -61,66 +61,62 @@ void packetChannels()
       JOYSTICK_HIGH);
     gamepad.SetY(map_data);
     
-    // Rx - Channel 3 - T
+    // Z - Channel 3 - Thr
     channel_data = crsf.getChannel(3);
     map_data = map(channel_data, \
       CHANNEL_3_LOW_EP,          \
       CHANNEL_3_HIGH_EP,         \
       JOYSTICK_LOW,              \
       JOYSTICK_HIGH);
-    gamepad.SetRx(map_data);
+    gamepad.SetZ(map_data);
     
-    // Ry - Channel 4 - R
+    // Rx - Channel 4 - Rud
     channel_data = crsf.getChannel(4);
     map_data = map(channel_data, \
       CHANNEL_4_LOW_EP,          \
       CHANNEL_4_HIGH_EP,         \
       JOYSTICK_LOW,              \
       JOYSTICK_HIGH);
-    gamepad.SetRy(map_data);
+    gamepad.SetRx(map_data);
 
-    // Z - Channel 5
-    channel_data = crsf.getChannel(5);
-    map_data = map(channel_data, \
-      CHANNEL_5_LOW_EP,          \
-      CHANNEL_5_HIGH_EP,         \
-      JOYSTICK_LOW,              \
-      JOYSTICK_HIGH);
-    gamepad.SetZ(map_data);
-
-    // Rz - Channel 6
+    // S1 - Channel 6
     channel_data = crsf.getChannel(6);
     map_data = map(channel_data, \
       CHANNEL_6_LOW_EP,          \
       CHANNEL_6_HIGH_EP,         \
       JOYSTICK_LOW,              \
       JOYSTICK_HIGH);
-    gamepad.SetRz(map_data);
-    
-    // Rx - Channel 7
+    gamepad.SetS1(map_data);
+
+    // S2 - Channel 7
     channel_data = crsf.getChannel(7);
     map_data = map(channel_data, \
       CHANNEL_7_LOW_EP,          \
       CHANNEL_7_HIGH_EP,         \
       JOYSTICK_LOW,              \
       JOYSTICK_HIGH);
-    gamepad.SetThrottle(map_data);
-
-    // Rx - Channel 8
-    channel_data = crsf.getChannel(8);
+    gamepad.SetS2(map_data);
+    
+    // SB - Channel 9
+    channel_data = crsf.getChannel(9);
     map_data = map(channel_data, \
-      CHANNEL_8_LOW_EP,          \
-      CHANNEL_8_HIGH_EP,         \
+      CHANNEL_9_LOW_EP,          \
+      CHANNEL_9_HIGH_EP,         \
       JOYSTICK_LOW,              \
       JOYSTICK_HIGH);
-    gamepad.SetS0(map_data);
+    gamepad.SetSB(map_data);
 
-    // Ry - unused
-    // gamepad.SetRy(map_data);
-    // Rz - unused
-    // gamepad.SetRz(map_data);
-    // S0 - unused
-    // gamepad.SetS0(map_data);
+    // SC - Channel 10
+    channel_data = crsf.getChannel(10);
+    map_data = map(channel_data, \
+      CHANNEL_10_LOW_EP,          \
+      CHANNEL_10_HIGH_EP,         \
+      JOYSTICK_LOW,              \
+      JOYSTICK_HIGH);
+    gamepad.SetSC(map_data);
+
+
+ 
 
     // Multi-position switches can be set up in calibrations.h
     // The button will report HIGH when the channel is withing

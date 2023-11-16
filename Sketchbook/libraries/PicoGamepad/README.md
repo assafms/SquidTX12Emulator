@@ -1,4 +1,22 @@
+# Raspberry Pi Pico Gamepad for Squid TX12
+this version has been changed heavily to transform it from a generic Joystick to a Gamepad that is
+similar to the game pad you get by connecting TX12 using USB. 
+all of the buttons of the TX12 are working altho SE,SC,SF are not tristate at this point
+have fun
+
+Assaf 
+
+
+
+
+
+
+
+
 # Raspberry Pi Pico Gamepad/Joystick Library
+
+Orignial README
+
 
 **Version 1.0.0**
 
