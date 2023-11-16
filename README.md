@@ -10,21 +10,22 @@ the version in this fork will identify as a Gamepad and will map the buttons to 
 (Mode2)
 TX12  channel PC  Info 
 -------------------------
-X     CH1     X   Ail (Analog)
-Y     CH2     Y   Ele (Analog)
-Z     CH3     Z   Thr (Analog)
-Xr    CH4     Xr  Rud (Analog)
-S1    CH6     Yr  slider1 (Analog)
-S2    CH7     Zr  slider2 (Analog)
-SA    CH8     B1  2 states
-SB    CH9     SB  3 states (Analog) 
-              B2  2 states
-SC    CH10    SC  2 states (WIP...)
-              B3  2 states
-SD    CH11    B4  2 states
-SE    CH5     B5  2 states   
-SF    CH12    SF  3 states (Analog)
-              B6  2 states
+X     CH1     X   Ail (Analog)  
+Y     CH2     Y   Ele (Analog)  
+Z     CH3     Z   Thr (Analog)  
+Xr    CH4     Xr  Rud (Analog)  
+S1    CH6     Yr  slider1 (Analog)  
+S2    CH7     Zr  slider2 (Analog)  
+SA    CH8     B1  2 states  
+SB    CH9     SB  3 states (Analog)   
+              B2  2 states  
+SC    CH10    SC  2 states (WIP...)  
+              B3  2 states  
+SD    CH11    B4  2 states  
+SE    CH5     B5  2 states     
+SF    CH12    SF  3 states (Analog)  
+              B6  2 states  
+              
 
 
 Installation 
