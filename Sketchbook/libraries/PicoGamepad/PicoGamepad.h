@@ -34,7 +34,7 @@
 #define Y_AXIS_MSB 6
 #define Z_AXIS_LSB 7
 #define Z_AXIS_MSB 8
-#define Rx_AXIS_LSB 0
+#define Rx_AXIS_LSB 9
 #define Rx_AXIS_MSB 10
 #define S1_AXIS_LSB 11
 #define S1_AXIS_MSB 12
@@ -44,6 +44,11 @@
 #define SB_AXIS_MSB 16
 #define SC_AXIS_LSB 17
 #define SC_AXIS_MSB 18
+#define SE_AXIS_LSB 19
+#define SE_AXIS_MSB 20
+#define SF_AXIS_LSB 21
+#define SF_AXIS_MSB 22
+
 
 
 
@@ -137,7 +142,10 @@ namespace arduino
         void SetS2(uint16_t val);
         void SetSB(uint16_t val);
         void SetSC(uint16_t val);
-
+        void SetSE(uint16_t val);
+        void SetSF(uint16_t val);
+        void clearReport(void);
+        
         
         
 

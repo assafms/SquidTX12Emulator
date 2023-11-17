@@ -48,10 +48,9 @@ const uint8_t *PicoGamepad::report_desc()
     
      0x05,0x01,    // Usage page Generic Desktop controls 
      0x09,0x05,    // Usage Game pad
-     0xa1,         // Collection 
-        0x01,         // Application 
-        0xa1,         // Collection
-            0x00,           // Physical         
+     0xa1,0x01,    // Collection Application
+                
+        0xa1,0x00,         // Collection Physical
             0x05,0x09,      // Usage Page (button)
             0x19,0x01,      // Usage minimum (0x01)
             0x29,0x18,      // Usage maximum (0x18)
@@ -65,16 +64,30 @@ const uint8_t *PicoGamepad::report_desc()
             0x09,0x31,      // Usage (Y)
             0x09,0x32,      // Usage (Z)
             0x09,0x33,      // Usage (Rx)
-            0x09,0x34,      // Usage (S1)
-            0x09,0x35,      // Usage (S2)
-            0x09,0x36,      // Usage (SB)
-            0x09,0x36,      // Usage (SC)
+            0x09,0x34,      // Usage (S1)(Ry)
+            0x09,0x35,      // Usage (S2)(Rz)
             0x16,0x01,0x80, //Logical minimum (-32767)
             0x26,0xff,0x7f, //Logical miximum (32767)
-            0x75,0x10,      // Report size(18)
-            0x95,0x08,      // Report count
+            0x75,0x10,      // Report size(16)
+            0x95,0x06,      // Report count
             0x81,0x02,      // Input (Data,Var,Abs)
-        0xc0,       // End Collection
+            0x05, 0x01,    // Usage Page (Generic Desktop Controls)
+            0x09, 0x36,    // Usage (Slider)
+            0x09, 0x36,    // Usage (Slider)
+            //0x09, 0x36,    // Usage (Slider)            
+            0x16, 0x01, 0x80, // Logical Minimum (-32767)
+            0x26, 0xFF, 0x7F, // Logical Maximum (32767)
+            0x75, 0x10,    // Report Size (16)
+            0x95, 0x02,    // Report Count (2)
+            0x81, 0x02,    // Input (Data, Var, Abs)
+
+
+            
+
+
+
+        0xc0,   // End Collection
+
     0xc0   // End Collection
 
     };
@@ -144,6 +157,30 @@ void PicoGamepad::SetSC(uint16_t val)
     inputArray[SC_AXIS_MSB] = MSB(val);
 }
 
+void PicoGamepad::SetSE(uint16_t val)
+{
+    inputArray[SE_AXIS_LSB] = LSB(val);
+    inputArray[SE_AXIS_MSB] = MSB(val);
+}
+
+void PicoGamepad::SetSF(uint16_t val)
+{
+    inputArray[SF_AXIS_LSB] = LSB(val);
+    inputArray[SF_AXIS_MSB] = MSB(val);
+}
+
+void PicoGamepad::clearReport(void)
+{
+    for (int i = 0; i < inputArraySize; i++)
+    {
+        inputArray[i]=0;
+
+    }
+
+    
+}
+
+
 
 
 bool PicoGamepad::send_update()
@@ -154,10 +191,9 @@ bool PicoGamepad::send_update()
     for (int i = 0; i < inputArraySize; i++)
     {
         report.data[i] = inputArray[i];
-    }
-    // this is ugly , i know . but there is noise on the 2 MSB bits and i dont have an idea why.....
-    report.data[0] &= 0x3F ;   
 
+    }
+    
     report.length = inputArraySize;
  
     if (!send(&report))

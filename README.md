@@ -21,13 +21,13 @@ the version in this fork will identify as a Gamepad and will map the buttons to 
 | S1   | CH6     | Yr  | slider1 (Analog)  |
 | S2   | CH7     | Zr  | slider2 (Analog)  |
 | SA   | CH8     | B1  | 2 states          |
-| SB   | CH9     | SB  | 3 states (Analog) |
-|      |         | B2  | 2 states          |
-| SC   | CH10    | SC  | 2 states (WIP...) |
-|      |         | B3  | 2 states          |
-| SD   | CH11    | B4  | 2 states          |
-| SE   | CH5     | B5  | 2 states          |
-| SF   | CH12    | SF  | 2 states          |
+| SB   | CH9     | SB  | 3 states          |
+| SC   | CH10    | SC  | 3 states          |
+| SD   | CH11    | B2  | 2 states          |
+| SE   | CH5     | B3  | 2 states          |
+| SF   | CH12    | B4  | 2 states          |
+
+
 
 
 
@@ -41,7 +41,14 @@ Installation
 * Change the port to the Squid com port
 * Compile and upload 
 * In TX12 set ELRS to 333Hz ,telemetry off ,Switch mode 16ch rate/2
-* Have fun 
+
+
+Configuration
+
+* make sure that you define the channels as in the table above
+* if needed , open "Set up USB game controllers" in windows to test and clibrate 
+* calibrate! and make sure to do so without trim. once clibrated , you can use trim as needed
+
 
 
 

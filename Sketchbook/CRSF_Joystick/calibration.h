@@ -53,7 +53,7 @@ typedef struct btn_config {
     bool invert;
 } btn_config;
 
-#define NUM_BUTTONS 6
+#define NUM_BUTTONS 4
 btn_config btn_map[NUM_BUTTONS] = {
     {
     8,                    // channel
@@ -64,7 +64,7 @@ btn_config btn_map[NUM_BUTTONS] = {
     },
 
     {
-    9,                    // channel
+    11,                    // channel
     1,                    // id
     CHANNEL_AUX_SW_MID,   // lower bound
     CHANNEL_AUX_SW_HIGH,  // upper bound
@@ -72,7 +72,7 @@ btn_config btn_map[NUM_BUTTONS] = {
     },
 
     {
-    10,                    // channel
+    5,                    // channel
     2,                    // id
     CHANNEL_AUX_SW_MID,   // lower bound
     CHANNEL_AUX_SW_HIGH,  // upper bound
@@ -80,13 +80,13 @@ btn_config btn_map[NUM_BUTTONS] = {
     },
 
     {
-    11,                    // channel
+    12,                    // channel
     3,                    // id
     CHANNEL_AUX_SW_MID,   // lower bound
     CHANNEL_AUX_SW_HIGH,  // upper bound
     false                 // invert
-    },
-
+    }
+/*
     {
     5,                    // channel
     4,                    // id
@@ -103,6 +103,7 @@ btn_config btn_map[NUM_BUTTONS] = {
     false                 // invert
     },
 
+*/
 };
 
 
